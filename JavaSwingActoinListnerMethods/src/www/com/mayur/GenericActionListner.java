@@ -11,14 +11,9 @@ public class GenericActionListner implements ActionListener
 	{
 				 
 			GuiDemoApplication obj = GuiDemoApplication.getInstance();
-
 		
 			obj.txt1.setText(" Action Event Method 3 ");
 			System.out.println(" Action Event Method 3 ");
-
-			System.out.println("# Button 3 : "+obj.btn3.hashCode());
-
-		
 		
 	}
 }

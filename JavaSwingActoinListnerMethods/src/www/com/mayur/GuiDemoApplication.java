@@ -70,8 +70,8 @@ public class GuiDemoApplication extends JFrame implements ActionListener
 	
 	public static void main(String[] args)
 	{
-		
-		GuiDemoApplication app1 = new GuiDemoApplication();
+		// Create instance usig public getInstance mehod only //
+		GuiDemoApplication app1 = GuiDemoApplication.getInstance();
 
 		app1.setVisible(true);
 
