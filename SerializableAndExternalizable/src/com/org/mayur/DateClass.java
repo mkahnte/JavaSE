@@ -10,7 +10,9 @@ public class DateClass implements Serializable
 	
 	public DateClass()
 	{
-		
+		this.dd = 1;
+		this.mm = 1;
+		this.yy = 1990;
 	}
 
 	public DateClass(int dd, int mm, int yy)
