@@ -12,6 +12,7 @@ import java.net.Socket;
 import javax.swing.JFrame;
 import javax.swing.JTextArea;
 import javax.swing.JButton;
+import javax.swing.plaf.SliderUI;
 
 public class Server
 {
@@ -57,8 +58,6 @@ public class Server
 		
 		Server s = new Server();
 		s.createConnection(4000);
-	
-		
 	}
 	
 	public void createConnection(int port)
@@ -71,6 +70,33 @@ public class Server
 			
 			in = new DataInputStream(server_Socket.getInputStream());
 			out = new DataOutputStream(server_Socket.getOutputStream());
+			
+			Thread listen_To_InputStream = new Thread( new Runnable()
+			{
+				@Override
+				public void run()
+				{
+					while(true)
+					{	
+						try
+						{							
+							txtAreaServer.setText(in.readUTF());
+							Thread.sleep(100);
+						}
+						catch (IOException e)
+						{
+							e.printStackTrace();
+						}
+						catch (InterruptedException e)
+						{
+							e.printStackTrace();
+						}
+					}
+				}
+			});
+			
+			listen_To_InputStream.start();
+			
 			
 		}
 		catch (IOException e)
