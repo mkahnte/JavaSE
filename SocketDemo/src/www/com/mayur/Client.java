@@ -70,6 +70,32 @@ public class Client
 			client_Socket = new Socket(server,port);
 			in = new DataInputStream(client_Socket.getInputStream());
 			out = new DataOutputStream(client_Socket.getOutputStream());
+			
+			Thread listen_To_InputStream = new Thread( new Runnable()
+			{
+				@Override
+				public void run()
+				{
+					while(true)
+					{	
+						try
+						{							
+							txtAreaClient.setText(in.readUTF());
+							Thread.sleep(100);
+						}
+						catch (IOException e)
+						{
+							e.printStackTrace();
+						}
+						catch (InterruptedException e)
+						{
+							e.printStackTrace();
+						}
+					}
+				}
+			});
+			
+			listen_To_InputStream.start(); 
 						
 		}
 		catch (IOException e)

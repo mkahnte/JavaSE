@@ -24,6 +24,7 @@ public class Server
 	DataInputStream in;
 	DataOutputStream out; 
 
+	
 		
 	public Server()
 	{
@@ -79,13 +80,15 @@ public class Server
 					while(true)
 					{	
 						try
-						{							
+						{	
+							
 							txtAreaServer.setText(in.readUTF());
 							Thread.sleep(100);
 						}
 						catch (IOException e)
 						{
-							e.printStackTrace();
+							txtAreaServer.setText(" Connectoin Closed from Client ... ");
+							break;
 						}
 						catch (InterruptedException e)
 						{
@@ -104,11 +107,18 @@ public class Server
 			System.out.println(" Error In Connection : "+e.getMessage());
 		}
 	}
-	
-	
+		
 	private void sendDatatoClient()
 	{
-		
+		try
+		{
+			out.writeUTF(txtAreaServer.getText());
+		}
+		catch (IOException e)
+		{
+			e.printStackTrace();
+		}
+
 	}
 
 	
