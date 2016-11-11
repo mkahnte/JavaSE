@@ -16,6 +16,7 @@ public class MySqlQuery
 		{
 			Class.forName("com.mysql.jdbc.Driver");
 			
+			//create connection to database
 			Connection connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/iacsd", "root", "root");
 			
 			String query = "select * from emp";
