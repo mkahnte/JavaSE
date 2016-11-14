@@ -65,21 +65,24 @@ public class ValidateUserServlet extends HttpServlet
 					 response.addCookie(cookie_username);
 					 response.addCookie(cookie_password);
 					 
-					 
-					 
 					 flag=true;
 					 break;
+		
+				 
 				 }
 			 }
 			 
 			 if(flag==false)
 			 {
+				 // POST Call
 				 request.getRequestDispatcher("LoginServlet").forward(request, response);
 			 }
-			
-			
-
-			
+			 else
+			 {
+				 // POST Call
+				 request.getRequestDispatcher("ChoiceServlet").forward(request, response);
+			 }
+		
 			
 		}
 		catch (ClassNotFoundException e)
