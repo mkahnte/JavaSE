@@ -17,7 +17,7 @@ public class LoginServlet extends HttpServlet
 	"</head>"+
 	"<body>"+
 		"<h1> Login Page </h1>"+
-	    "<form action='ValidateServlet' method='post'>"+
+	    "<form action='ValidateUserServlet' method='post'>"+
 	    "<br/>"+
 	    "<span> Username </span><input type='text' name='txtUsername_LoginServlet' value=''/>"+
 	    "<br/><br/>"+
@@ -34,14 +34,16 @@ public class LoginServlet extends HttpServlet
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException
 	{
-			resp.getWriter().print(page_html);
+			
+			doPost(req,resp);
 	}
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException
 	{
-		doGet(req,resp);
+		resp.getWriter().print(page_html);
+
 	}
 
 	
