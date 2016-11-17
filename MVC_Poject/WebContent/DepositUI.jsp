@@ -8,7 +8,7 @@
 </head>
 <body>
 
-	<form action="ContollerServlet" method="post">
+	<form action="Controller_Page.jsp" method="post">
 	
 		<span> Accout Number </span> <input type="text" name="acoountNumber" value="" /> <br/><br/>
 	

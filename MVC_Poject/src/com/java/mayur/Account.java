@@ -2,29 +2,29 @@ package com.java.mayur;
 
 public class Account
 {
-	private int balence;
+	private int ammount;
 	
 	public Account()
 	{
-		this.balence = 100;
+		this.ammount = 100;
 	}
 	
 	public int getBalence()
 	{
-		return balence;
+		return ammount;
 	}
 
-	public void setBalence(int balence)
+	public void setBalence(int balance)
 	{
-		this.balence = balence;
+		this.ammount = balance;
 	}	
 
 	public boolean depositAmmount( int ammount )
 	{
-		balence = balence + ammount;
+		ammount = ammount + ammount;
 		
 		System.out.println(" Deposit : "+ammount);
-		System.out.println(" Balence : "+balence);
+		System.out.println(" Balance : "+ammount);
 		
 		return true;
 	}
