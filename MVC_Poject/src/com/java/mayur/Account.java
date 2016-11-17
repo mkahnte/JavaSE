@@ -1,23 +1,29 @@
 package com.java.mayur;
 
-public class Account
+import java.io.Serializable;
+
+public class Account implements Serializable
 {
-	private int ammount;
+	private int amount;
 	
 	public Account()
 	{
-		this.ammount = 100;
-	}
-	
-	public int getBalence()
-	{
-		return ammount;
+		this.amount = 100;
 	}
 
-	public void setBalence(int balance)
+	public int getAmount()
 	{
-		this.ammount = balance;
-	}	
+		return amount;
+	}
+
+
+
+	public void setAmount(int amount)
+	{
+		this.amount = amount;
+	}
+
+
 
 	public boolean depositAmmount( int ammount )
 	{

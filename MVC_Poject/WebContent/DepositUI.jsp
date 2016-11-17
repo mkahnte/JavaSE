@@ -12,7 +12,7 @@
 	
 		<span> Accout Number </span> <input type="text" name="acoountNumber" value="" /> <br/><br/>
 	
-		<span> Ammount </span> <input type="text" name="ammount" value="" /><br/><br/>
+		<span> Amount </span> <input type="text" name="txtAmount"/><br/><br/>
 	
 		<input type="submit" name="btnSubmit" value=" Deposit " />
 	

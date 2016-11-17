@@ -4,21 +4,23 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Controller</title>
 </head>
 <body>
 
-	<!-- new object creation -->
+	
 	<jsp:useBean id="act" class="com.java.mayur.Account">
-	<jsp:setProperty property="amount" name="act"/>
+		
+	<!-- 				       class					     HTML -->
+	<jsp:setProperty property="amount" name="act" param="txtAmount"/>
  	
 	</jsp:useBean>
-	<span> Current Balence : </span> <%=request.getSession().getAttribute("amount")%>
-
-	<!-- new object's balance which is 100 by default -->
-	<span> Current Balence : </span> <jsp:getProperty property="amount" name="act"/>
-
-
+	
+	<%
+		request.getSession().setAttribute("amount", act.getAmount());
+	%>
+		
+	<jsp:forward page="DisplayFinalOutput.jsp"></jsp:forward>
 
 </body>
 </html>

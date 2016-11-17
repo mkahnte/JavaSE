@@ -58,7 +58,7 @@ public class ContollerServlet extends HttpServlet {
 		
 		ac.depositAmmount(ammount);
 		
-		session.setAttribute("ammount", ac.getBalence());
+		session.setAttribute("ammount", ac.getAmount());
 		
 		request.getRequestDispatcher("DisplayFinalOutput.jsp").forward(request, response);;
 	}
